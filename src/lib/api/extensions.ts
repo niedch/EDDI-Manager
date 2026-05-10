@@ -46,6 +46,7 @@ export const EXTENSION_TYPE_INFO: Record<
   "ai.labs.templating": { label: "Templating", icon: "FileCode", order: 7 },
   "ai.labs.output.template": { label: "Templating", icon: "FileCode", order: 7 },
   "ai.labs.mcpcalls": { label: "MCP Calls", icon: "Plug", order: 8 },
+  "ai.labs.rag": { label: "Rag Provider", icon: "BookOpenCheck", order: 9 },
 };
 
 /** Get a human-readable label for an extension type */

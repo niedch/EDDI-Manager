@@ -14,6 +14,7 @@ import {
   FileCode,
   Puzzle,
   ArrowLeft,
+  BookOpenCheck,
   FilePlus,
   FolderSearch,
   Plug,
@@ -44,6 +45,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Settings,
   FileCode,
   Plug,
+  BookOpenCheck,
 };
 
 function getIcon(type: string): React.ComponentType<{ className?: string }> {
@@ -63,6 +65,7 @@ function buildEddiUri(rt: ResourceTypeConfig, id: string, version: number): stri
     output: "ai.labs.output",
     propertysetter: "ai.labs.property",
     mcpcalls: "ai.labs.mcpcalls",
+    ragProvider: "ai.labs.rag",
   };
   const host = slugToHost[rt.slug] ?? `ai.labs.${rt.slug}`;
   return `eddi://${host}/${rt.store}/${rt.plural}/${id}?version=${version}`;

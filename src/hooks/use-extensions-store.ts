@@ -22,6 +22,19 @@ const WELL_KNOWN_TYPES: ExtensionDescriptor[] = [
     },
     extensions: {},
   },
+  {
+    type: "ai.labs.rag",
+    displayName: "Rag Provider",
+    configs: {
+      uri: {
+        displayName: "Resource URI",
+        fieldType: "URI",
+        isOptional: false,
+        defaultValue: null,
+      },
+    },
+    extensions: {},
+  },
 ];
 
 /**
