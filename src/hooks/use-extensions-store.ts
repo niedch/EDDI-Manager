@@ -8,7 +8,7 @@ const EXTENSIONS_STORE_KEY = ["extensionStore"] as const;
  * Well-known extension types that should always appear in the Add Task dialog
  * even if the backend doesn't list them in /extensionstore/extensions.
  */
-const WELL_KNOWN_TYPES: ExtensionDescriptor[] = [
+export const WELL_KNOWN_TYPES: ExtensionDescriptor[] = [
   {
     type: "ai.labs.mcpcalls",
     displayName: "MCP Calls",

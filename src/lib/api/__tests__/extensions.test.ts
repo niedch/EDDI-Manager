@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { RESOURCE_TYPES } from "../resources";
 import { EXTENSION_TO_RESOURCE_SLUG, hasResourceStore } from "../extensions";
+import { WELL_KNOWN_TYPES } from "@/hooks/use-extensions-store";
 
 /**
  * These tests validate that the frontend extension registry and RESOURCE_TYPES
@@ -112,5 +113,19 @@ describe("EXTENSION_TO_RESOURCE_SLUG — completeness", () => {
 
   it("hasResourceStore returns false for parser", () => {
     expect(hasResourceStore("ai.labs.parser")).toBe(false);
+  });
+});
+
+describe("WELL_KNOWN_TYPES — dialog fallbacks", () => {
+  it("includes ai.labs.rag so it always appears in the Add Task dialog", () => {
+    const ragEntry = WELL_KNOWN_TYPES.find((t) => t.type === "ai.labs.rag");
+    expect(ragEntry).toBeDefined();
+    expect(ragEntry!.displayName).toBe("Rag Provider");
+  });
+
+  it("includes ai.labs.mcpcalls", () => {
+    const mcpEntry = WELL_KNOWN_TYPES.find((t) => t.type === "ai.labs.mcpcalls");
+    expect(mcpEntry).toBeDefined();
+    expect(mcpEntry!.displayName).toBe("MCP Calls");
   });
 });
